@@ -1,3 +1,4 @@
+import CartWidget from './Cartwidget';
 import './NavBar.scss'
 import Navbar from 'react-bootstrap/Navbar'
 import { Button, Form, Nav, NavDropdown, FormControl } from 'react-bootstrap';
@@ -44,6 +45,7 @@ function NavBar () {
             
               </Form>
 
+              <Nav.Link className="btn btn-secondary CartWidgetLink" href="#Carrito" role="button"> <CartWidget /> </Nav.Link> {/* cuando colapse agregar mt-4*/}
               
             </Nav>
           
