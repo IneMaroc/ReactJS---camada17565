@@ -2,6 +2,7 @@ import CartWidget from './Cartwidget';
 import './NavBar.scss'
 import Navbar from 'react-bootstrap/Navbar'
 import { Button, Form, Nav, NavDropdown, FormControl } from 'react-bootstrap';
+import { BiSearchAlt2 } from "react-icons/bi";
 
 
 
@@ -40,12 +41,12 @@ function NavBar () {
               
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
               
-                    <Button variant="outline-secondary">Buscar</Button>
+                    <Button variant="outline-secondary"><BiSearchAlt2 size={30}/></Button>
                                
             
               </Form>
 
-              <Nav.Link className="btn btn-secondary CartWidgetLink" href="#Carrito" role="button"> <CartWidget /> </Nav.Link> {/* cuando colapse agregar mt-4*/}
+              <Nav.Link href="#Carrito" role="button"> <CartWidget/> </Nav.Link> 
               
             </Nav>
           

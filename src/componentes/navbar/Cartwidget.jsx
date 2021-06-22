@@ -1,12 +1,18 @@
 import React from 'react';
-import {ReactComponent as Canasta} from './cestaCompra.svg';
+
+import { RiShoppingBag3Fill } from "react-icons/ri";
+
 import './CartWidget.scss'
 
 function CartWidget () {
 
     return (
         
-        <Canasta className="CartWidget"/>
+    
+        <div>
+        <RiShoppingBag3Fill size={32} /> Carrito ({0})
+        </div>
+   
         
     )
 }
