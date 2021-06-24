@@ -1,0 +1,46 @@
+[{
+        "title": "Producto1",
+	"description": "DescripciónProducto 1",
+        "category": "category1",
+        "stock": 11,
+        "price": 500,
+        "pictureUrl": "./imagen.svg",
+	"id":1
+    },
+    {
+        "title": "Producto2",
+	"description": "DescripciónProducto 2",
+        "category": "category2",
+        "stock": 10,
+        "price": 500,
+        "pictureUrl": "./imagen.svg",
+	"id":2
+    },
+    {
+        "title": "Producto3",
+	"description": "DescripciónProducto 3",
+        "category": "category3",
+        "stock": 20,
+        "price": 500,
+        "pictureUrl": "./imagen.svg",
+	"id":3
+    },
+    {
+        "title": "Producto4",
+	"description": "DescripciónProducto 4",
+        "category": "category4",
+        "stock": 30,
+        "price": 500,
+        "pictureUrl": "./imagen.svg",
+	"id":4
+    },
+    {
+        "title": "Producto5",
+	"description": "DescripciónProducto 5",
+        "category": "category5",
+        "stock": 5,
+        "price": 500,
+        "pictureUrl": "./imagen.svg",
+	"id":5
+    }
+]

@@ -1,8 +1,6 @@
 import React from 'react';
-
 import { RiShoppingBag3Fill } from "react-icons/ri";
-
-import './CartWidget.scss'
+import './CartWidget.scss';
 
 function CartWidget () {
 
