@@ -1,10 +1,11 @@
-import ItemListContainer from "./container/ItemListContainer";
+import ItemDetailContainer from "./container/ItemDetailContainer";
 
 function App() {
   return (
     <div className="App">
      
-     <ItemListContainer/> 
+     <ItemDetailContainer /> 
+     
      
     </div>
   );

@@ -1,0 +1,16 @@
+.card {
+    width: auto;
+    margin: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .card-body {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+
+
+    }
+}

@@ -1,6 +1,7 @@
 [{
         "title": "Producto1",
 	"description": "DescripciónProducto 1",
+        "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
         "category": "category1",
         "stock": 11,
         "price": 500,
@@ -10,6 +11,7 @@
     {
         "title": "Producto2",
 	"description": "DescripciónProducto 2",
+        "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
         "category": "category2",
         "stock": 10,
         "price": 500,
@@ -19,6 +21,7 @@
     {
         "title": "Producto3",
 	"description": "DescripciónProducto 3",
+        "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
         "category": "category3",
         "stock": 20,
         "price": 500,
@@ -28,6 +31,7 @@
     {
         "title": "Producto4",
 	"description": "DescripciónProducto 4",
+        "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
         "category": "category4",
         "stock": 30,
         "price": 500,
@@ -37,6 +41,7 @@
     {
         "title": "Producto5",
 	"description": "DescripciónProducto 5",
+        "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
         "category": "category5",
         "stock": 5,
         "price": 500,
