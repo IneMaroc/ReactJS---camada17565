@@ -31,15 +31,15 @@ const Counter = (props) => {
 
     return (
 
-        <div>
+        <div className="counter">
 
-        <div>
-            <button onClick={ handleDown }>-</button>
-            <input value={counter}/>
-            <button onClick={ handleUp }> +</button>
-            
-        </div>
-        <button onClick={e => onAdd(e, counter)} className="btn btn-secondary" type="submit">Agregar al Carrito</button>
+            <div className="handlers">
+                <button onClick={ handleDown }>-</button>
+                <input value={counter}/>
+                <button onClick={ handleUp }> +</button>
+                
+            </div>
+            <button onClick={e => onAdd(e, counter)} className="btn btn-secondary" type="submit">Agregar al Carrito</button>
         </div>
     )
 }

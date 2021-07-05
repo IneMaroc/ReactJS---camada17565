@@ -4,7 +4,7 @@ import "./itemlist.scss";
 function ItemList ({items}){
  
     return (
-
+        
         <div className="contenedor">
 
             {items.map(item => {

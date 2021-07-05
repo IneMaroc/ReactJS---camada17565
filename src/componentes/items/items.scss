@@ -1,0 +1,15 @@
+.cards {
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    box-sizing: border-box;
+    padding: 1rem;
+    border: solid 1px #333;
+    border-top: 1px solid #333;
+    &_link:link {
+        text-decoration: none;
+    }
+       
+}

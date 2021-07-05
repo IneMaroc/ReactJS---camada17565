@@ -1,7 +1,32 @@
-.CartWidgetLink {
-     
-    margin-left: 1em;
-    padding: 0.2em;
+.nav_menu {
+    color: #333;
+    &_link:link {
+        color: #333;
+        text-decoration: none;
+    }
+    &_link:visited {
+        color: #333;
+        }
+    &_link:hover {
+        color: purple;
+        }
+    &_link:active {
+        color: teal;
+        }
+    &_form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+           
+}
+
+.activeRoute {
+
+    border-bottom: 0.1rem solid purple;
     
 }
+
+
+
 

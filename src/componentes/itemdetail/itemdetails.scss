@@ -1,16 +1,19 @@
 .card {
-    width: auto;
+    width: 80%;
     margin: 2em;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    .card-body {
+    align-items: center;
+    box-sizing: border-box;
+    &-body {
         
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-
-
-
     }
+}
+
+.cont {
+    height: auto;
+    padding: 1rem;
+    align-self: center;
 }

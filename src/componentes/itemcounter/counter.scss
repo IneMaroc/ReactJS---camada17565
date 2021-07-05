@@ -1,0 +1,16 @@
+.counter {
+    display: flex;
+    flex-direction: column;
+    .btn, input {
+        margin-bottom: 0.5em;
+        
+    }
+    .btn, .handlers {
+        width: 100%;
+    }
+    .handlers>button {
+        width: 1.5em;
+
+    }
+
+}
