@@ -1,22 +1,17 @@
 import { useState } from "react";
 import './counter.scss'
 import PropTypes from 'prop-types';
+import { NavLink } from "react-router-dom";
 
 
-const Counter = (props) => {
-
-    const [counter, setCounter] = useState( props.init );
-
-    const onAdd = (e, q) => {
-
-        alert(`Has agregado ${q} producto/s al carrito`)
-
-    }
-
+const Counter = ({init, onAdd, updateCart, stock, id}) => {
+    
+    const [counter, setCounter] = useState(init );
+    
     //manejadores
 
     const handleUp = () => {
-        if (counter < props.stock) {
+        if (counter < stock) {
             setCounter( counter + 1);
 
         }
@@ -39,7 +34,8 @@ const Counter = (props) => {
                 <button onClick={ handleUp }> +</button>
                 
             </div>
-            <button onClick={e => onAdd(e, counter)} className="btn btn-secondary" type="submit">Agregar al Carrito</button>
+            {updateCart? <NavLink to={"/checkout"}><button  className="btn btn-secondary" > Terminar Compra </button></NavLink> : <button onClick={(e) => onAdd(e, counter)} className="btn btn-secondary" type="submit">Agregar al Carrito</button>}
+           
         </div>
     )
 }
