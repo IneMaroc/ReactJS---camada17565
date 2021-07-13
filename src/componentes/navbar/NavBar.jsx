@@ -1,5 +1,5 @@
 import CartWidget from './Cartwidget';
-import './navbar.scss'
+import './NavBar.scss'
 import Navbar from 'react-bootstrap/Navbar'
 import { Button, Form, Nav, NavDropdown, FormControl } from 'react-bootstrap';
 import { BiSearchAlt2 } from "react-icons/bi";
