@@ -2,8 +2,12 @@
 
 function Checkout () {
 
+    return (
+
+        <p>Controlar productos del carrito</p>
+    )
  
-    <p>Controlar productos del carrito</p>
+   
     
 };
 

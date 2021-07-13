@@ -34,7 +34,8 @@ const Counter = ({init, onAdd, updateCart, stock, id}) => {
                 <button onClick={ handleUp }> +</button>
                 
             </div>
-            {updateCart? <NavLink to={"/checkout"}><button  className="btn btn-secondary" > Terminar Compra </button></NavLink> : <button onClick={(e) => onAdd(e, counter)} className="btn btn-secondary" type="submit">Agregar al Carrito</button>}
+            {updateCart? <NavLink to={"/checkout"}><button  className="btn btn-secondary" > Terminar Compra </button></NavLink> : <button onClick={(e) => onAdd(e, counter, id)} className="btn btn-secondary" type="submit">Agregar al Carrito</button>}
+
            
         </div>
     )

@@ -1,43 +1,33 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetails from "../componentes/itemdetail/ItemDetails";
+import { StoreContext } from "../context/StoreContext";
 
 
-function ItemDetailContainer ({onAdd}) {
-    const {id} = useParams()
+function ItemDetailContainer () {
+  const globalStatus = useContext(StoreContext);
+  const items = globalStatus.listItems;
+  console.table(items);
 
-    const [items, setItems] = useState([]);
-    const [item, setItem] = useState({});
+  const {id} = useParams();
+  const [item, setItem] = useState(items);
 
+  useEffect (() => {
 
-    useEffect(() => {
-        const getItems = async () => {
-          let p;
-          if (items.length === 0) {
-            const response = await fetch("/itemlist.json");
-            let aux = await response.json();
-            p = aux;
-            setItems(aux);
-          }
-          p = items.find(element => element.id === Number(id));
-          setItem(p);           
-          
-        };
-        getItems();
-      }, [items, id]);
-
-    return (
-
-    <> {
-        item ?  <ItemDetails className="align-content-center" item={item} onAdd={onAdd}/> : <p>producto no encontrado</p>
-
-    }
+    let p = items.find(element => element.id === Number(id));
+    setItem(p);           
     
-    
-    
-    </>
-       
+  },[items, id]);
+ 
+  return (
 
+  <> {
+      item ?  <ItemDetails className="align-content-center" item={item} /> : <p>producto no encontrado</p>
+
+  }
+    
+  </>
+  
 );
 }
 

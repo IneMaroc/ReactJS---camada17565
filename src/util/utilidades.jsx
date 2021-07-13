@@ -28,3 +28,27 @@
     window.open(data.init_point, "_blank");
   }
 */
+
+var firebaseConfig = {
+    apiKey: "AIzaSyD2MS429DXPAuR7yZ_Mtwylv6Oo2z08W5A",
+    authDomain: "my-store---ine-maroc---coder.firebaseapp.com",
+    projectId: "my-store---ine-maroc---coder",
+    storageBucket: "my-store---ine-maroc---coder.appspot.com",
+    messagingSenderId: "902666839489",
+    appId: "1:902666839489:web:41f942cf68d341f68e7b40"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  rules_version = '2';
+  service cloud.firestore {
+    match /databases/{database}/documents {
+      match /{document=**} {
+        allow read, write: if
+            request.time < timestamp.date(2021, 8, 11);
+      }
+    }
+  }
+const getStorage = () => {
+    return firebase.storage()
+}

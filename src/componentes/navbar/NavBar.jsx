@@ -1,5 +1,5 @@
 import CartWidget from './Cartwidget';
-import './NavBar.scss'
+import './navbar.scss'
 import Navbar from 'react-bootstrap/Navbar'
 import { Button, Form, Nav, NavDropdown, FormControl } from 'react-bootstrap';
 import { BiSearchAlt2 } from "react-icons/bi";
@@ -25,9 +25,9 @@ function NavBar ({id}) {
               
               <NavDropdown title="Productos" id="collasible-nav-dropdown">
                 
-                <NavDropdown.Item as={NavLink} className="nav_menu_link" to={"/category/1"}>Tipo 1</NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} className="nav_menu_link" to={"/category/2"}>Tipo 2 </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} className="nav_menu_link" to={"/category/3"}>Tipo 3</NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} className="nav_menu_link" to={"/category/A"}>Tipo A</NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} className="nav_menu_link" to={"/category/B"}>Tipo B </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} className="nav_menu_link" to={"/category/C"}>Tipo C</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item as={NavLink} className="nav_menu_link" exact to={"/"}>Todos los Productos</NavDropdown.Item>
                 

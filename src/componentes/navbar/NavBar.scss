@@ -9,6 +9,7 @@
         }
     &_link:hover {
         color: purple;
+        transition: ease all .2s;
         }
     &_link:active {
         color: purple;
