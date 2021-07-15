@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import Checkout from "../componentes/checkout/Checkout"
 import { StoreContext } from "../context/StoreContext";
-
+import "./container.scss"
 function ItemsCheckoutContainer () {
 
-    const {cart, cartQty, totalPrice} = useContext(StoreContext)
+    const {cart, cartQty, totalPrice, emptyCart} = useContext(StoreContext)
 
     return (
 
@@ -14,9 +14,13 @@ function ItemsCheckoutContainer () {
                 return <Checkout item={item} key={item.id}/>
             })
             }
-            <div>
-                <h6 className="container-tprice">Total $ {totalPrice}</h6>
-                <h6 className="container-tprice">Items Totales: {cartQty}</h6>
+            <div className="checkoutcontainer">
+                <h6 className="checkoutcontainer-tprice">Total $ {totalPrice}</h6>
+                <h6 className="checkoutcontainer-tq">Items Totales: {cartQty}</h6>
+                <div>
+                    <button className="checkoutcontainer-btn" onClick={emptyCart} > Vaciar Carrito </button> 
+                    <button className="checkoutcontainer-btn" > Terminar Compra </button> 
+                </div>         
             </div>
             
         </div>

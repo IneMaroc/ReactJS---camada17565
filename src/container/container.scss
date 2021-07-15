@@ -1,0 +1,29 @@
+@import "../app.scss";
+
+
+.checkoutcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+
+    &-btn {
+    
+    background: $white;
+    padding: 10px;
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    margin: -1px;
+    margin-right: 1em;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $pink;
+    cursor: pointer;
+        &:hover {
+            background: $rose;
+            transition: all .4s ease-in-out;
+        }
+    }
+}

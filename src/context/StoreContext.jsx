@@ -9,7 +9,11 @@ export const StoreComponentContext = ({children}) => {
     const [cartQty, setCartQty] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
    
-    
+    const emptyCart = () => {
+        setCart([]);
+        setCartQty(0);
+        setTotalPrice(0);
+    }
 
     const isInCart = (id) => {
         if (cart.find((p) => p.id === id)) {
@@ -95,5 +99,5 @@ export const StoreComponentContext = ({children}) => {
     }, []);
 
     
-    return <StoreContext.Provider value={{listItems, setListItems, cart, setCart, cartQty, setCartQty, totalPrice, setTotalPrice, onAdd, getItems}}>{children}</StoreContext.Provider>
+    return <StoreContext.Provider value={{listItems, setListItems, cart, setCart, cartQty, setCartQty, totalPrice, setTotalPrice, onAdd, getItems, emptyCart}}>{children}</StoreContext.Provider>
 };

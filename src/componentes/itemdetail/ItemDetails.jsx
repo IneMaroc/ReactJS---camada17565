@@ -22,7 +22,7 @@ function ItemDetails ({item}) {
                         <h5 className="card-text">{item.description}</h5>
                         <h6 className="card-fulltext">{item.fulldescription}</h6>
                         <h5 className="card-title"> PRECIO $ {item.price} Stock: {item.stock}</h5>
-                        {Number(item.stock) !== 0 ? <Counter init={1} stock={item.stock} item={item} onAdd={onAdd}/> : <p>No hay stock del producto</p>}
+                        {Number(item.stock) !== 0 ? <Counter init={1} stock={item.stock} item={item} onAdd={onAdd} checkout={false}/> : <p>No hay stock del producto</p>}
                     </div>
                     
             </div>
