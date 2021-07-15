@@ -1,10 +1,10 @@
 import { useState } from "react";
 import './counter.scss'
 import PropTypes from 'prop-types';
-import { NavLink } from "react-router-dom";
+//import { NavLink } from "react-router-dom";
 
 
-const Counter = ({init, onAdd, updateCart, stock, id}) => {
+const Counter = ({init, stock, item, onAdd}) => {
     
     const [counter, setCounter] = useState(init );
     
@@ -30,12 +30,15 @@ const Counter = ({init, onAdd, updateCart, stock, id}) => {
 
             <div className="handlers">
                 <button onClick={ handleDown }>-</button>
-                <input value={counter}/>
+                <input value={counter} readOnly />
                 <button onClick={ handleUp }> +</button>
                 
             </div>
-            {updateCart? <NavLink to={"/checkout"}><button  className="btn btn-secondary" > Terminar Compra </button></NavLink> : <button onClick={(e) => onAdd(e, counter, id)} className="btn btn-secondary" type="submit">Agregar al Carrito</button>}
 
+            <div className="counterbtn">
+                <button onClick={() => onAdd(item, counter) } className="counterbtn-button" type="submit">Agregar al Carrito</button>
+                <button className="counterbtn-button" type="submit">Ir al Carrito</button>
+            </div>
            
         </div>
     )

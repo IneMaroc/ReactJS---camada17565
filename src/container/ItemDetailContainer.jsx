@@ -5,19 +5,18 @@ import { StoreContext } from "../context/StoreContext";
 
 
 function ItemDetailContainer () {
-  const globalStatus = useContext(StoreContext);
-  const items = globalStatus.listItems;
-  console.table(items);
+  const {listItems} = useContext(StoreContext);
+  
 
   const {id} = useParams();
-  const [item, setItem] = useState(items);
+  const [item, setItem] = useState(listItems);
 
   useEffect (() => {
 
-    let p = items.find(element => element.id === Number(id));
+    let p = listItems.find(element => element.id === Number(id));
     setItem(p);           
     
-  },[items, id]);
+  },[listItems, id]);
  
   return (
 

@@ -6,19 +6,18 @@ import { StoreContext } from "../context/StoreContext";
 
 function ItemListContainer () {
          
-    const context = useContext(StoreContext);
-    const aux = context.listItems;
-    console.table(aux);
-
+    const {listItems} = useContext(StoreContext);
+    
     const {category} = useParams(null);
-    const [items, setItems] = useState(aux);
+    const [items, setItems] = useState([]);
+    
 
     useEffect (() => {
         //if the url have a category then filter if not show all the items
-        let p = category ? aux.filter (element => element.category === category) : aux;
+        let p = category ? listItems.filter (element => element.category === category) : listItems;
         setItems(p);          
         
-    },[aux, category]);
+    },[listItems, category]);
       
 
     return (

@@ -4,6 +4,7 @@ import NavBar from "./componentes/navbar/NavBar";
 import ItemListContainer from "./container/ItemListContainer";
 import ItemsCheckoutContainer from "./container/ItemsCheckoutContainer"
 import { StoreComponentContext } from "./context/StoreContext";
+import "./app.scss";
 
 
 function App() {

@@ -1,16 +1,47 @@
+@import "../../app.scss";
+
 .counter {
     display: flex;
     flex-direction: column;
-    .btn, input {
-        margin-bottom: 0.5em;
+    
+    .counterbtn {
+
+        display: flex;
+        justify-content:flex-end;
+        align-items: baseline;
+
+        &-button {
+            background: darken($light, 10%);
+            padding: 10px;
+            display: inline-block;
+            outline: 0;
+            border: 0;
+            margin: -1px;
+            margin-right: 1em;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: $white;
+            cursor: pointer;
+            &:hover {
+              background: $rose;
+              transition: all .4s ease-in-out;
+            }
+        }
+            
+    }
+    
+    .handlers {
+
         
-    }
-    .btn, .handlers {
-        width: 100%;
-    }
-    .handlers>button {
-        width: 1.5em;
+        
+        margin-bottom: 0.5em;
 
+        button {
+            align-items: flex-end;
+            background: $light;
+            width: 1.7em;
+        }
     }
-
+    
 }

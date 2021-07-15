@@ -1,20 +1,23 @@
-.card {
+@import "../../app.scss";
+
+.cont {
+    height: auto;
+    padding: 1em;
+    align-self: center;
     width: 80%;
-    margin: 2em;
+    margin-top: 2em;
+    margin-left: 10%;
     display: flex;
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: $white;
+    border-radius: 1em;
+    box-shadow: 5px 5px 15px rgba($rose, .5);
     &-body {
         
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
     }
-}
-
-.cont {
-    height: auto;
-    padding: 1rem;
-    align-self: center;
 }
