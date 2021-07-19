@@ -13,7 +13,7 @@ function NavBar ({id}) {
       <nav className="nav_menu">       
         <Navbar sticky="top" collapseOnSelect expand="lg" bg="light" variant="light">
           
-          <Navbar.Brand exact as={NavLink} className="nav_menu_link" to={"/"}> <img alt=""/>LOGO</Navbar.Brand>
+          <Navbar.Brand exact as={NavLink} className="nav_menu_link logo" to={"/"}> <img alt=""/>LOGO</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
           <Navbar.Collapse id="responsive-navbar-nav mb-2">

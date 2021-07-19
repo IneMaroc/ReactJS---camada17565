@@ -2,10 +2,13 @@ import {ReactComponent as ImagenModelo} from './imagen.svg';
 import { Link } from "react-router-dom";
 import "./checkout.scss"
 import Counter from '../itemcounter/Counter';
+import { useContext } from 'react';
+import { StoreContext } from '../../context/StoreContext';
 
 
 function Checkout ({item}) {
-
+    
+    const {updateCart, updateQty} = useContext(StoreContext);
     
 
     return (
@@ -23,7 +26,7 @@ function Checkout ({item}) {
                     </div>
                     </Link>
                     <div>
-                        <Counter init={item.qty} stock={item.stock} item={item} checkout = {true} />
+                        <Counter init={item.qty} stock={item.stock} item={item} updateCartUp={updateCart} updateQtyUp={updateQty} checkout = {true} />
                     </div>
                     <div> 
                             <h6 className="checkout-qty">Cantidad {item.qty}</h6>

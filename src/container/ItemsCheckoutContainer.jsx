@@ -19,7 +19,7 @@ function ItemsCheckoutContainer () {
                 <h6 className="checkoutcontainer-tq">Items Totales: {cartQty}</h6>
                 <div>
                     <button className="checkoutcontainer-btn" onClick={emptyCart} > Vaciar Carrito </button> 
-                    <button className="checkoutcontainer-btn" > Terminar Compra </button> 
+                    <button className="checkoutcontainer-btn" > Crear Orden </button> 
                 </div>         
             </div>
             

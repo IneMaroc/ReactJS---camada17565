@@ -1,61 +1,65 @@
-[{
-        "title": "Producto1",
-	"description": "DescripciónProducto 1",
-        "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
-        "category": "A",
-        "stock": 11,
-        "price": 500,
-        "pictureUrl": "./imagen.svg",
-	"id":1
-    },
-    {
-        "title": "Producto2",
-	"description": "DescripciónProducto 2",
-        "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
-        "category": "B",
-        "stock": 0,
-        "price": 500,
-        "pictureUrl": "./imagen.svg",
-	"id":2
-    },
-    {
-        "title": "Producto3",
-	"description": "DescripciónProducto 3",
-        "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
-        "category": "C",
-        "stock": 20,
-        "price": 500,
-        "pictureUrl": "./imagen.svg",
-	"id":3
-    },
-    {
-        "title": "Producto4",
-	"description": "DescripciónProducto 4",
-        "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
-        "category": "A",
-        "stock": 30,
-        "price": 500,
-        "pictureUrl": "./imagen.svg",
-	"id":4
-    },
-    {
-        "title": "Producto5",
-	"description": "DescripciónProducto 5",
-        "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
-        "category": "B",
-        "stock": 5,
-        "price": 500,
-        "pictureUrl": "./imagen.svg",
-	"id":5
-    },
-    {
-        "title": "Producto6",
-	"description": "DescripciónProducto 6",
-        "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
-        "category": "C",
-        "stock": 15,
-        "price": 1000,
-        "pictureUrl": "./imagen.svg",
-	"id":6
-    }
-]
+{"products":
+        [{
+                "title": "Producto1",
+                "description": "DescripciónProducto 1",
+                "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
+                "category": "A",
+                "stock": 11,
+                "price": 500,
+                "pictureUrl": "./imagen.svg",
+                "id":1
+            },
+            {
+                "title": "Producto2",
+                "description": "DescripciónProducto 2",
+                "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
+                "category": "B",
+                "stock": 0,
+                "price": 500,
+                "pictureUrl": "./imagen.svg",
+                "id":2
+            },
+            {
+                "title": "Producto3",
+                "description": "DescripciónProducto 3",
+                "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
+                "category": "C",
+                "stock": 20,
+                "price": 500,
+                "pictureUrl": "./imagen.svg",
+                "id":3
+            },
+            {
+                "title": "Producto4",
+                "description": "DescripciónProducto 4",
+                "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
+                "category": "A",
+                "stock": 30,
+                "price": 500,
+                "pictureUrl": "./imagen.svg",
+                "id":4
+            },
+            {
+                "title": "Producto5",
+                "description": "DescripciónProducto 5",
+                "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
+                "category": "B",
+                "stock": 5,
+                "price": 500,
+                "pictureUrl": "./imagen.svg",
+                "id":5
+            },
+            {
+                "title": "Producto6",
+                "description": "DescripciónProducto 6",
+                "fulldescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin leo turpis, in hendrerit eros egestas non. Donec finibus, leo ac interdum sodales, nulla dui vulputate nunc, sed posuere turpis massa nec arcu.",
+                "category": "C",
+                "stock": 15,
+                "price": 1000,
+                "pictureUrl": "./imagen.svg",
+                "id":6
+            }
+        ]
+
+}
+

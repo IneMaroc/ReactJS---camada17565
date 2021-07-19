@@ -1,20 +1,34 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import './counter.scss';
 import PropTypes from 'prop-types';
 import { NavLink } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext";
 
 
-const Counter = ({init, stock, item, onAdd, checkout}) => {
+
+const Counter = ({init, stock, item, onAdd, updateCartUp, updateQtyUp, checkout}) => {
     
     const [counter, setCounter] = useState(init );
+    const {cart} = useContext(StoreContext);
     
-    //manejadores
+
+    //handlers
 
     const handleUp = () => {
-        if (counter < stock) {
+
+        if (checkout && counter < stock) {
+
             setCounter( counter + 1);
+            updateCartUp(item.id, counter);
+            updateQtyUp(cart);
+
+        } else if (counter < stock) {
+
+            
+                setCounter( counter + 1);
 
         }
+            
     }
 
     const handleDown = () => {
@@ -28,13 +42,22 @@ const Counter = ({init, stock, item, onAdd, checkout}) => {
 
         <div className="counter">
 
+            {checkout? <div className="handlers">
+                <button onClick={ handleDown }>-</button>
+                <input value={counter} readOnly />
+                <button onClick={ handleUp } >+</button>
+                
+            </div> : 
             <div className="handlers">
                 <button onClick={ handleDown }>-</button>
                 <input value={counter} readOnly />
-                <button onClick={ handleUp }> +</button>
+                <button onClick={ handleUp }>+</button>
                 
-            </div>
-        {checkout? <div></div> : <div className="counterbtn">
+            </div>}
+
+            
+
+            {checkout? <div></div> : <div className="counterbtn">
                 <button onClick={() => onAdd(item, counter) } className="counterbtn-button" type="submit">Agregar al Carrito</button>
                <NavLink to={"/checkout"}> <button className="counterbtn-button" type="submit">Ir al Carrito</button> </NavLink>
             </div>}

@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { getFireStore } from "../firebase/client";
 
 export const StoreContext = createContext();
 
@@ -85,10 +86,10 @@ export const StoreComponentContext = ({children}) => {
     
     const getItems = async () => {
            
-            
-        const response = await fetch("/itemlist.json");
-        const result = await response.json();
-        setListItems(result);
+        const DB = getFireStore() // data base conection
+        const COLLECTION= DB.collection("products") // we get the hole collection
+        const RESPONSE = await COLLECTION.get()
+        setListItems(RESPONSE.docs.map(element => element.data()));
         
     
     };

@@ -1,7 +1,7 @@
-import firebase from "firebase/firebase/app";
+import firebase from "firebase/app";
 import "@firebase/firestore";
 
-const firebaseConfig = firebase.initializeApp({
+export const firebaseConfig = firebase.initializeApp({
     apiKey: "AIzaSyD2MS429DXPAuR7yZ_Mtwylv6Oo2z08W5A",
     authDomain: "my-store---ine-maroc---coder.firebaseapp.com",
     projectId: "my-store---ine-maroc---coder",
@@ -14,7 +14,7 @@ export const getFirebase = () => {
     return firebaseConfig
 }
 
-// funciones de firebase
+// firebas functions
 export const getFireStore = () => {
     return firebase.firestore(firebaseConfig)
 }

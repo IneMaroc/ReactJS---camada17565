@@ -6,7 +6,7 @@ import { StoreContext } from '../../context/StoreContext';
 
 function ItemDetails ({item}) {
 
-    //const [updateCart, setUpdateCart] = useState(null);
+    
     const {onAdd} = useContext(StoreContext);
 
     
