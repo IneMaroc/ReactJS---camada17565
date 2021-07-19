@@ -36,4 +36,13 @@
         flex-direction: row;
         flex-wrap: nowrap;
     }
+    &_button {
+        outline: 0;
+        border: 0;
+    }
+    &_button:hover {
+        background-color: $white;
+        color: $rose;
+        transition: ease all .2s;
+    }
 }

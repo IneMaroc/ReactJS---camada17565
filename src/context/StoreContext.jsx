@@ -40,6 +40,31 @@ export const StoreComponentContext = ({children}) => {
 
     }
 
+    const updateCartDown = (id, q) => {
+       
+        for (let i in cart) {
+            if ((cart[i].id === id) && (cart[i].stock > 0)) {
+                 cart[i].stock += q;
+                 cart[i].qty -= q;
+                 updateQty(cart);
+                                  
+            } else {                             
+                
+                removeItem(id);
+            }
+        }
+
+    }
+
+    const removeItem = (id) => {
+
+        let aux = cart.filter(element => element.id !== id)
+          console.log(aux);
+        setCart(aux);
+        updateQty(aux);
+
+    }
+
     const updateQty = (cart) => {
         let qty = 0;
         let price = 0;
@@ -52,6 +77,7 @@ export const StoreComponentContext = ({children}) => {
 
     }
 
+    
     const onAdd = (item, q) => {
 
         if (isInCart(item.id)) {
@@ -100,5 +126,5 @@ export const StoreComponentContext = ({children}) => {
     }, []);
 
     
-    return <StoreContext.Provider value={{listItems, setListItems, cart, setCart, cartQty, setCartQty, totalPrice, setTotalPrice, onAdd, getItems, emptyCart}}>{children}</StoreContext.Provider>
+    return <StoreContext.Provider value={{listItems, setListItems, cart, setCart, cartQty, setCartQty, totalPrice, setTotalPrice, onAdd, updateCart, updateCartDown, removeItem, updateQty, getItems, emptyCart}}>{children}</StoreContext.Provider>
 };

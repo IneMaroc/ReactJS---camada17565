@@ -6,7 +6,7 @@ import { StoreContext } from "../../context/StoreContext";
 
 
 
-const Counter = ({init, stock, item, onAdd, updateCartUp, updateQtyUp, checkout}) => {
+const Counter = ({init, stock, item, onAdd, updateCartUp, updateQtyUp, updateCartDown, checkout}) => {
     
     const [counter, setCounter] = useState(init );
     const {cart} = useContext(StoreContext);
@@ -19,7 +19,7 @@ const Counter = ({init, stock, item, onAdd, updateCartUp, updateQtyUp, checkout}
         if (checkout && counter < stock) {
 
             setCounter( counter + 1);
-            updateCartUp(item.id, counter);
+            updateCartUp(item.id, 1);
             updateQtyUp(cart);
 
         } else if (counter < stock) {
@@ -32,7 +32,13 @@ const Counter = ({init, stock, item, onAdd, updateCartUp, updateQtyUp, checkout}
     }
 
     const handleDown = () => {
-        if (counter > 1) {
+        if(checkout && counter > 1) {
+            setCounter(counter - 1);
+            updateCartDown(item.id, 1)
+            
+        }
+        
+        else if (counter > 1) {
             setCounter(counter - 1);
         }
         

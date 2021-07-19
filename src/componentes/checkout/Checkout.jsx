@@ -1,4 +1,5 @@
 import {ReactComponent as ImagenModelo} from './imagen.svg';
+import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./checkout.scss"
 import Counter from '../itemcounter/Counter';
@@ -8,7 +9,7 @@ import { StoreContext } from '../../context/StoreContext';
 
 function Checkout ({item}) {
     
-    const {updateCart, updateQty} = useContext(StoreContext);
+    const {updateCart, updateQty, updateCartDown, removeItem} = useContext(StoreContext);
     
 
     return (
@@ -26,12 +27,15 @@ function Checkout ({item}) {
                     </div>
                     </Link>
                     <div>
-                        <Counter init={item.qty} stock={item.stock} item={item} updateCartUp={updateCart} updateQtyUp={updateQty} checkout = {true} />
+                        <Counter init={item.qty} stock={item.stock} item={item} updateCartUp={updateCart} updateQtyUp={updateQty} updateCartDown= {updateCartDown} removeItem={removeItem} checkout = {true} />
                     </div>
                     <div> 
                             <h6 className="checkout-qty">Cantidad {item.qty}</h6>
                             <h6 className="checkout-price">Precio Unitario: ${item.price}</h6> 
                             <h6 className="checkout-tprice">Total Parcial: ${item.price * item.qty}</h6>  
+                    </div>
+                    <div>
+                        <button className="checkout_button" onClick={() => removeItem(item.id)}><FaTrashAlt size={32} ></FaTrashAlt></button>
                     </div>
                                     
 
