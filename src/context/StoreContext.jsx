@@ -32,7 +32,7 @@ export const StoreComponentContext = ({children}) => {
                  cart[i].stock -= q;
                  cart[i].qty += q;
                                   
-            } else {                             
+            } else if ((cart[i].id === id) && (cart[i].stock < q)) {                             
                 
                 alert(`El stock disponible es ${cart[i].stock}`)
             }
@@ -43,15 +43,12 @@ export const StoreComponentContext = ({children}) => {
     const updateCartDown = (id, q) => {
        
         for (let i in cart) {
-            if ((cart[i].id === id) && (cart[i].stock > 0)) {
+            if (cart[i].id === id) {
                  cart[i].stock += q;
                  cart[i].qty -= q;
                  updateQty(cart);
                                   
-            } else {                             
-                
-                removeItem(id);
-            }
+            } 
         }
 
     }

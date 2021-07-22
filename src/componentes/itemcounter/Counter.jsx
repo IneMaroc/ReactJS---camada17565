@@ -16,7 +16,7 @@ const Counter = ({init, stock, item, onAdd, updateCartUp, updateQtyUp, updateCar
 
     const handleUp = () => {
 
-        if (checkout && counter < stock) {
+        if (checkout && stock > 0) {
 
             setCounter( counter + 1);
             updateCartUp(item.id, 1);

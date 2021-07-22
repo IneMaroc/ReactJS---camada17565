@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import Checkout from "../componentes/checkout/Checkout"
+import CheckoutForm from "../componentes/checkoutform/CheckoutForm";
 import { StoreContext } from "../context/StoreContext";
 import "./container.scss"
 function ItemsCheckoutContainer () {
@@ -10,10 +11,18 @@ function ItemsCheckoutContainer () {
 
         <div className="container">
 
-            {cart.map(item => {
-                return <Checkout item={item} key={item.id}/>
-            })
-            }
+            <div className="checkoutitems">
+
+                {cart.map(item => {
+                    return <Checkout item={item} key={item.id}/>
+                })
+                }
+
+            </div>
+
+            <div className="checkoutform"> <CheckoutForm/> </div>
+
+            
             <div className="checkoutcontainer">
                 <h6 className="checkoutcontainer-tprice">Total $ {totalPrice}</h6>
                 <h6 className="checkoutcontainer-tq">Items Totales: {cartQty}</h6>
@@ -22,6 +31,8 @@ function ItemsCheckoutContainer () {
                     <button className="checkoutcontainer-btn" > Crear Orden </button> 
                 </div>         
             </div>
+
+           
             
         </div>
         

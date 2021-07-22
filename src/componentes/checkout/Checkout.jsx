@@ -27,7 +27,7 @@ function Checkout ({item}) {
                     </div>
                     </Link>
                     <div>
-                        <Counter init={item.qty} stock={item.stock} item={item} updateCartUp={updateCart} updateQtyUp={updateQty} updateCartDown= {updateCartDown} removeItem={removeItem} checkout = {true} />
+                        <Counter init={item.qty} stock={item.stock} item={item} updateCartUp={updateCart} updateQtyUp={updateQty} updateCartDown= {updateCartDown} checkout = {true} />
                     </div>
                     <div> 
                             <h6 className="checkout-qty">Cantidad {item.qty}</h6>
