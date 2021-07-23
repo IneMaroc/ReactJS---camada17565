@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { getFireStore } from "../firebase/client";
+import firebase from "firebase/app";
+import "@firebase/firestore";
 
 export const StoreContext = createContext();
 
@@ -9,6 +11,7 @@ export const StoreComponentContext = ({children}) => {
     const [cart, setCart] = useState([]);
     const [cartQty, setCartQty] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [form, setForm] = useState({name:"", lastname:"", idnr:"", email:"", tel:0});
    
     const emptyCart = () => {
         setCart([]);
@@ -100,11 +103,35 @@ export const StoreComponentContext = ({children}) => {
                      
     };
 
+    const createOrder = () => {
+
+        const db = getFireStore();
+
+        
+        const orders = db.collection("orders");
+
+        const newOrder = {
+            buyer:form, 
+            items:cart, 
+            tPrice:totalPrice, 
+            tQty:cartQty,
+            date: firebase.firestore.Timestamp.fromDate(new Date()),
+
+        }
+        console.log(newOrder);
+        
+        orders.add(newOrder).then(({ id }) => {
+            console.log(id);
+            
+        })
+
+    }
+
     
 
     console.log(cart);
     console.log(cartQty);
-    console.log(totalPrice)
+    console.log(totalPrice);
   
     
     const getItems = async () => {
@@ -123,5 +150,5 @@ export const StoreComponentContext = ({children}) => {
     }, []);
 
     
-    return <StoreContext.Provider value={{listItems, setListItems, cart, setCart, cartQty, setCartQty, totalPrice, setTotalPrice, onAdd, updateCart, updateCartDown, removeItem, updateQty, getItems, emptyCart}}>{children}</StoreContext.Provider>
+    return <StoreContext.Provider value={{listItems, setListItems, cart, setCart, cartQty, setCartQty, totalPrice, setTotalPrice, form, setForm, onAdd, updateCart, updateCartDown, removeItem, updateQty, getItems, emptyCart, createOrder }}>{children}</StoreContext.Provider>
 };

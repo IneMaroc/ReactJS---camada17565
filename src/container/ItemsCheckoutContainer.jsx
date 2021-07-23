@@ -5,7 +5,7 @@ import { StoreContext } from "../context/StoreContext";
 import "./container.scss"
 function ItemsCheckoutContainer () {
 
-    const {cart, cartQty, totalPrice, emptyCart} = useContext(StoreContext)
+    const {cart, cartQty, totalPrice, emptyCart, createOrder, form} = useContext(StoreContext)
 
     return (
 
@@ -28,7 +28,9 @@ function ItemsCheckoutContainer () {
                 <h6 className="checkoutcontainer-tq">Items Totales: {cartQty}</h6>
                 <div>
                     <button className="checkoutcontainer-btn" onClick={emptyCart} > Vaciar Carrito </button> 
-                    <button className="checkoutcontainer-btn" > Crear Orden </button> 
+                    <button className="checkoutcontainer-btn" onClick={() => {
+                        createOrder();
+                    }}> Crear Orden </button> 
                 </div>         
             </div>
 
