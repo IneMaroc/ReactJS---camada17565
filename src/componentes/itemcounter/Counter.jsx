@@ -6,7 +6,7 @@ import { StoreContext } from "../../context/StoreContext";
 
 
 
-const Counter = ({init, stock, item, onAdd, updateCartUp, updateQtyUp, updateCartDown, checkout}) => {
+const Counter = ({init, stock, item, onAdd, updateCartUp, updateQtyUp, updateCartDown, checkout, itemlist}) => {
     
     const [counter, setCounter] = useState(init );
     const {cart} = useContext(StoreContext);
@@ -50,23 +50,25 @@ const Counter = ({init, stock, item, onAdd, updateCartUp, updateQtyUp, updateCar
 
             {checkout? <div className="handlers">
                 <button onClick={ handleDown }>-</button>
-                <input value={counter} readOnly />
+                <input value={counter} size="4" readOnly />
                 <button onClick={ handleUp } >+</button>
                 
             </div> : 
             <div className="handlers">
                 <button onClick={ handleDown }>-</button>
-                <input value={counter} readOnly />
+                <input value={counter}  readOnly />
                 <button onClick={ handleUp }>+</button>
                 
             </div>}
 
             
 
-            {checkout? <div></div> : <div className="counterbtn">
-                <button onClick={() => onAdd(item, counter) } className="counterbtn-button" type="submit">Agregar al Carrito</button>
-               <NavLink to={"/checkout"}> <button className="counterbtn-button" type="submit">Ir al Carrito</button> </NavLink>
-            </div>}
+            {checkout? <div></div> : itemlist? <div className="counterbtn">
+                <button onClick={() => onAdd(item, counter) } className="counterbtn bttn" type="submit">Agregar al Carrito</button>
+                </div>  : <div className="counterbtn">
+                <button onClick={() => onAdd(item, counter) } className="counterbtn bttn" type="submit">Agregar al Carrito</button>
+               <NavLink to={"/checkout"}> <button className="counterbtn bttn" type="submit">Ir al Carrito</button> </NavLink> </div> 
+             }
             
            
         </div>

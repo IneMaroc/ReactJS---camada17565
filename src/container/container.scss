@@ -1,36 +1,60 @@
 @import "../app.scss";
 
+.checkoutcont {  
 
-
-.checkouthandlers {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
-    padding-top: 1em;
-    padding-bottom: 1em;
-
-
-    &-btn {
-    
-    background: $white;
-    padding: 10px;
-    display: inline-block;
-    outline: 0;
-    border: 0;
-    margin: -1px;
-    margin-right: 1em;
-    border-radius: 5px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: $pink;
-    cursor: pointer;
-        &:hover {
-            background: $rose;
-            transition: all .4s ease-in-out;
-        }
+    box-sizing: border-box;
+    width: 100vw;
+    @include for-size(big-desktop-up) {
+        display:grid; 
+        grid-template-areas: "productdata buyerdata" "handlers handlers";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;      
+        
     }
+    &_items {
+        grid-area: productdata;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1em;;
+    }
+    &_buyerform {
+        grid-area: buyerdata;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4em;
+        &-form {
+            width: 80%;
+            
+        }
+                
+    }
+    &_order, &_emptycart {
+        
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    
+    &_handlers {
+        grid-area: handlers;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        
+    
+    
+    }
+    
 }
+
+

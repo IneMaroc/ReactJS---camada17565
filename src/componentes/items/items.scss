@@ -1,14 +1,13 @@
 @import "../../app.scss";
 
 .cards {
-    width: 18rem;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    width: 17em;
+    margin: 2em;
     box-sizing: border-box;
     padding: 1rem;
     border-radius: 1em;
     background: $white;
-    box-shadow: 5px 5px 15px rgba($rose, .5);
+    box-shadow: 5px 5px 15px rgba($green, .5);
     &_link:link {
         text-decoration: none;
         color: #333;
@@ -30,5 +29,10 @@
         margin-right: 25px;
         text-align: justify;
     }
-    
+    &_img {
+        display: flex;
+        justify-content: center;
+        width: auto; 
+        height: 8em;
+    }
 }

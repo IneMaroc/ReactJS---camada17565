@@ -1,8 +1,8 @@
 @import "../../app.scss";
 
-.cont {
+.card {
     height: auto;
-    padding: 1em;
+    padding: 0.5em;
     align-self: center;
     width: 80%;
     margin-top: 2em;
@@ -13,11 +13,36 @@
     box-sizing: border-box;
     background-color: $white;
     border-radius: 1em;
-    box-shadow: 5px 5px 15px rgba($rose, .5);
+    box-shadow: 5px 5px 15px rgba($green, .5);
+    @include for-size(tablet-landscape-up) {
+        flex-direction: row;
+    }
     &-body {
         
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
     }
+    &_img {
+
+        display: flex;
+        justify-content: center;
+        @include for-size(tablet-landscape-up) {
+            width: 30em;
+            height: 10em;
+            
+        }  
+        img {
+
+            @include for-size(tablet-landscape-up) {
+                width: 55%;
+                align-self: center;
+                
+                
+            } 
+            
+        }
+
+    }
 }
+

@@ -1,3 +1,6 @@
+@import "../../app.scss";
+
+
 .nav_menu {
     color: #333;
     &_link:link {
@@ -8,11 +11,11 @@
         color: #333;
         }
     &_link:hover {
-        color: purple;
+        color: $oposite;
         transition: ease all .2s;
         }
     &_link:active {
-        color: purple;
+        color: $oposite;
         }
     &_form {
         display: flex;
@@ -24,10 +27,13 @@
 
 .activeRoute {
 
-    border-bottom: 0.1rem solid purple;
+    border-bottom: 0.1rem solid $oposite;
     
 }
 
+.logo {
+    width: 8em;
+}
 
 
 

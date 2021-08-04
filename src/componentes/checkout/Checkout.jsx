@@ -1,4 +1,3 @@
-import {ReactComponent as ImagenModelo} from './imagen.svg';
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./checkout.scss"
@@ -17,11 +16,11 @@ function Checkout ({item}) {
 
         
                     <Link className="checkout_link" to={"/item/" + item.id}>
-                    <ImagenModelo/>
+                    <div className="checkout_img"><img src={item.img} alt=""/></div>
                     
                     <div className="checkout-body">
                         <h5 className="checkout-title">{item.name}</h5>
-                        <p className="checkout-text">id:{item.id} Stock Remanente: {item.stock} </p>
+                        <p className="checkout-text"> Stock Remanente: {item.stock} </p>
                         
                                       
                     </div>
@@ -30,8 +29,8 @@ function Checkout ({item}) {
                         <Counter init={item.qty} stock={item.stock} item={item} updateCartUp={updateCart} updateQtyUp={updateQty} updateCartDown= {updateCartDown} checkout = {true} />
                     </div>
                     <div> 
-                            <h6 className="checkout-qty">Cantidad {item.qty}</h6>
-                            <h6 className="checkout-price">Precio Unitario: ${item.price}</h6> 
+                            <h6 className="checkout-qty">KG {item.qty}</h6>
+                            <h6 className="checkout-price">Precio Unitario x KG: ${item.price}</h6> 
                             <h6 className="checkout-tprice">Total Parcial: ${item.price * item.qty}</h6>  
                     </div>
                     <div>

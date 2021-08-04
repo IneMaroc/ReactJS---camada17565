@@ -11,7 +11,7 @@ export const StoreComponentContext = ({children}) => {
     const [cart, setCart] = useState([]);
     const [cartQty, setCartQty] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
-    const [form, setForm] = useState({name:"", lastname:"", idnr:"", email:"", tel:0});
+    const [form, setForm] = useState({name:"", lastname:"", idnr:"", email:"", emailcheck:"", tel:0});
     const [orderId, setOrderId] = useState();
     const [order, setOrder] = useState({});
     
@@ -105,58 +105,97 @@ export const StoreComponentContext = ({children}) => {
                      
     };
 
+    
+
     const createOrder = () => {
+
 
         const db = getFireStore();
 
         
         const orders = db.collection("orders");
+        
 
         const newOrder = {
-            buyer:form, 
-            items:cart, 
+            items:cart,
+            buyer:form,             
             tPrice:totalPrice, 
             tQty:cartQty,
             date: firebase.firestore.Timestamp.fromDate(new Date()),
 
         }
         setOrder(newOrder);
+
                 
         orders.add(newOrder).then(({ id }) => {
             
             setOrderId(id);
             
-        })
+            const batch = db.batch();
+
+            const updateItems = db.collection("products");
+            cart.forEach((element) => {
+                    batch.update(updateItems.doc(element.id), { stock: element.stock });
+                }
+            )
+
+            batch.commit()
+            
+        }).catch((err) => {
+            console.error('Error: ', err)
+        });
+        
 
     }
+
+    
 
     const emptyOrder = () => {
         setOrder({});
         setOrderId();
     }
 
-    console.log(cart);
-    console.log(cartQty);
-    console.log(totalPrice);
-    console.log(orderId);
-    console.log(order);
-  
-    
+        
     const getItems = async () => {
+
+        
            
         const DB = getFireStore() // data base conection
         const COLLECTION= DB.collection("products") // we get the hole collection
         const RESPONSE = await COLLECTION.get()
-        setListItems(RESPONSE.docs.map(element => element.data()));
+        setListItems(RESPONSE.docs.map(element => {
+            return { id: element.id, ...element.data()}
+        }));
         
+       
     
     };
     
 
     useEffect(() => {
-       getItems();
+        
+        
+
+        getItems();
+
+      
     }, []);
 
     
-    return <StoreContext.Provider value={{listItems, setListItems, cart, setCart, cartQty, setCartQty, totalPrice, setTotalPrice, form, setForm, order, orderId, onAdd, updateCart, updateCartDown, removeItem, updateQty, getItems, emptyCart, createOrder, emptyOrder }}>{children}</StoreContext.Provider>
+    
+    return <StoreContext.Provider value={{listItems, setListItems, 
+    cart, setCart, 
+    cartQty, setCartQty, 
+    totalPrice, setTotalPrice, 
+    form, setForm,
+    order, orderId, 
+    onAdd, 
+    updateCart, 
+    updateCartDown, 
+    removeItem, 
+    updateQty, 
+    getItems, 
+    emptyCart, 
+    createOrder, 
+    emptyOrder }}>{children}</StoreContext.Provider>
 };

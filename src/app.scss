@@ -2,31 +2,64 @@
 $font: 'Lato', sans-serif;
 
 $white: #F5F5F5;
-$light: #E0C9CB;
-$tan: #C3A1A0;
-$pink: #D9AAB7;
-$rose: #BA7E7E;
+$light: #E9EAA7;
+$tan: #6AA733;
+$aqua: #A0C056;
+$green: #7DAF30;
 $dark: #4E4E4E;
+$lightgrey: #cac9c9;
+$oposite: orange;
 
+/*MEDIA QUERYS*/
 
-/* center container in the middle */
-
-
-html {
-    display: grid;
-    min-height: 100%;
+@mixin for-size($size) {
+  @if $size==tablet-portrait-up {
+      @media (min-width: 760px) {
+          @content;
+      }
+  }
+  @else if $size==tablet-landscape-up {
+      @media (min-width: 900px) {
+          @content;
+      }
+  }
+  @else if $size==desktop-up {
+      @media (min-width: 1200px) {
+          @content;
+      }
+  }
+  @else if $size==big-desktop-up {
+      @media (min-width: 1800px) {
+          @content;
+      }
+  }
 }
-  
+
+
 body {
-    display: grid;
-    background: $light;
-    font-family: $font, sans-serif;
-    text-transform: uppercase;
+  width: 100vw;
+  font-size: 14px;
+  background: $light;
+  font-family: $font, sans-serif;
+  text-transform: uppercase;
+  transition: ease all .2s;
+  box-sizing: border-box;
+  &::before,
+  &::after {
+      box-sizing: border-box;
+  }
+  @include for-size(desktop-up) {
+      font-size: 15px;
+  }
+  @include for-size(big-desktop-up) {
+      font-size: 16px;
+  }
+    
 }
 
 p {
-  font-size: 0.6em;
-  color: $rose;
+  font-size: 0.7em;
+  color: $green;
   letter-spacing: 1px;
 }
 
@@ -41,6 +74,26 @@ h2 {
   margin-top: -5px;
 }
 
+.bttn {
+    background: $green;
+    padding: 10px;
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    margin: 0.2em;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $white;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      background: $light;
+      transition: all .4s ease-in-out;
+      color: $dark;
+      
+    }
+}
 
 
 

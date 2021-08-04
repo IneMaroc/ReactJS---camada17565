@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetails from "../componentes/itemdetail/ItemDetails";
+import Loader from "../componentes/loader/Loader";
 import { StoreContext } from "../context/StoreContext";
 
 
@@ -13,7 +14,7 @@ function ItemDetailContainer () {
 
   useEffect (() => {
 
-    let p = listItems.find(element => element.id === Number(id));
+    let p = listItems.find(element => element.id === (id));
     setItem(p);           
     
   },[listItems, id]);
@@ -21,7 +22,7 @@ function ItemDetailContainer () {
   return (
 
   <> {
-      item ?  <ItemDetails className="align-content-center" item={item} /> : <p>producto no encontrado</p>
+      item ?  <ItemDetails className="align-content-center" item={item} /> : <Loader/>
 
   }
     

@@ -1,22 +1,32 @@
 @import "../../app.scss";
 
 .checkout {
-    height: 20%;
+    height: auto;
     padding: 1em;
-    align-self: center;
-    width: 80%;
+    width: 60%;
     margin-top: 2em;
-    margin-left: 10%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     background-color: $white;
     border-radius: 1em;
-    box-shadow: 5px 5px 15px rgba($rose, .5);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    box-shadow: 5px 5px 15px rgba($green, .5);
+    @include for-size(tablet-portrait-up) {
+        width: 80%;
+        height: 10em;     
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        
+    }
+    @include for-size(big-desktop-up) {
+        width: 70%;
+              
+        
+        
+    }
     &_link:link {
         color: $dark;
         text-decoration: none;
@@ -25,11 +35,11 @@
         color: $dark;
         }
     &_link:hover {
-        color: $rose;
+        color: $green;
         transition: ease all .2s;
         }
     &_link:active {
-        color: $rose;
+        color: $green;
         }
     &_form {
         display: flex;
@@ -39,10 +49,12 @@
     &_button {
         outline: 0;
         border: 0;
+        color: $aqua;
+        background-color: $white;
     }
     &_button:hover {
         background-color: $white;
-        color: $rose;
+        color: $green;
         transition: ease all .2s;
     }
 }

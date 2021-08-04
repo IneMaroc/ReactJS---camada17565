@@ -1,0 +1,41 @@
+@import "../../app.scss";
+
+.checkoutform form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: $white;
+    border-radius: 0.5em;
+    padding: 2em;
+    
+    input {
+        border: 0;
+        background-color: $light;
+        color: $dark;
+    }
+    input:focus {
+        outline: none;
+        border-bottom: 1px solid $dark;
+    }
+    label {
+        color: $dark;
+    }
+    .resetbtn {
+
+        margin-top: 2em;
+        background: $white;
+        display: block;
+        outline: 0;
+        border: 0;
+        border-radius: 5px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: $green;
+        cursor: pointer;
+            &:hover {
+                background: $green;
+                color: $white;
+                transition: all .4s ease-in-out;
+        }
+    }
+}
