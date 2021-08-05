@@ -16,7 +16,7 @@ function ItemDetails ({item}) {
             <div className="card">
                     <div className="card_img"><img src={item.pictureUrl} alt=""/></div>
                     <div className="card-body">
-                        <h4 className="card-title">{item.title}</h4>
+                        <h4 className="card-title"><stong>{item.title}</stong></h4>
                         <p className="card-text">{item.description}</p>
                         <h6 className="card-fulltext">{item.fulldescription}</h6>
                         <p className="card-text">Stock: {item.stock}</p>

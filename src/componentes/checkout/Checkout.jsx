@@ -19,7 +19,7 @@ function Checkout ({item}) {
                     <div className="checkout_img"><img src={item.img} alt=""/></div>
                     
                     <div className="checkout-body">
-                        <h5 className="checkout-title">{item.name}</h5>
+                    <h4 className="card-title"><stong>{item.name}</stong></h4>
                         <p className="checkout-text"> Stock Remanente: {item.stock} </p>
                         
                                       

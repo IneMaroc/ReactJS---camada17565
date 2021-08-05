@@ -5,6 +5,7 @@ import Loader from "../componentes/loader/Loader";
 import CheckoutOrder from "../componentes/checkoutorder/CheckoutOrder";
 import { StoreContext } from "../context/StoreContext";
 import {ReactComponent as EmptyCart} from './emptycart.svg';
+import { NavLink } from "react-router-dom";
 import "./container.scss"
 
 
@@ -24,9 +25,10 @@ function ItemsCheckoutContainer () {
                 <div className="checkoutcont_emptycart">
 
                     <div>
-                        <h2> Tu Carrito esta vacio </h2> 
+                        <h2> Carrito Vacio </h2> 
 
                         <EmptyCart/>
+                        <button as={NavLink} to={"/"} className="bttn">Empeza tu compra</button>
                     </div>                   
                 
                 

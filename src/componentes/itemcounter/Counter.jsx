@@ -56,7 +56,7 @@ const Counter = ({init, stock, item, onAdd, updateCartUp, updateQtyUp, updateCar
             </div> : 
             <div className="handlers">
                 <button onClick={ handleDown }>-</button>
-                <input value={counter}  readOnly />
+                <input value={counter} size="12" readOnly />
                 <button onClick={ handleUp }>+</button>
                 
             </div>}
