@@ -13,16 +13,10 @@
     }
     &_items {
         grid-area: productdata;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         padding-top: 1em;;
     }
     &_buyerform {
         grid-area: buyerdata;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         padding: 4em;
         &-form {
             width: 80%;
@@ -30,7 +24,7 @@
         }
                 
     }
-    &_order, &_emptycart {
+    &_order, &_emptycart, &_handlers, &_buyerform, &_items {
         
         margin-top: 2em;
         display: flex;
@@ -41,16 +35,12 @@
     
     &_handlers {
         grid-area: handlers;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         margin-top: 1em;
         margin-bottom: 1em;
         border-top: 1px solid #333;
         border-bottom: 1px solid #333;
         padding-top: 1em;
         padding-bottom: 1em;
-        
     
     
     }

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import Checkout from "../componentes/checkout/Checkout"
-import BuyerForm from "../componentes/checkoutform/BuyerForm";
+import Form from "../componentes/form/Form";
 import Loader from "../componentes/loader/Loader";
 import CheckoutOrder from "../componentes/checkoutorder/CheckoutOrder";
 import { StoreContext } from "../context/StoreContext";
@@ -50,7 +50,7 @@ function ItemsCheckoutContainer () {
 
                   <h2 className="checkoutcont_buyerform-title"> Ingresa tus datos </h2>
 
-                  <div className="checkoutcont_buyerform-form"> <BuyerForm/> </div>
+                  <div className="checkoutcont_buyerform-form"> <Form/> </div>
                 
 
             </div>           

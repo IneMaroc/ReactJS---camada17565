@@ -1,9 +1,9 @@
 import { useContext} from "react";
 import { StoreContext } from "../../context/StoreContext";
-import "./checkoutform.scss";
+import "./form.scss";
 
 
-function BuyerForm () {
+function Form () {
 
     const {form, setForm} = useContext(StoreContext);
 
@@ -33,4 +33,4 @@ function BuyerForm () {
 
 ) };
 
-export default BuyerForm;
+export default Form;
