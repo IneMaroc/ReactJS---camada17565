@@ -26,11 +26,9 @@ function ItemsCheckoutContainer () {
 
                     <div>
                         <h2> Carrito Vacio </h2> 
-
                         <EmptyCart/>
                         <button as={NavLink} to={"/"} className="bttn">Empeza tu compra</button>
                     </div>                   
-                
                 
                 </div> :
 
