@@ -1,17 +1,20 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import Checkout from "../componentes/checkout/Checkout"
 import Form from "../componentes/form/Form";
 import Loader from "../componentes/loader/Loader";
 import CheckoutOrder from "../componentes/checkoutorder/CheckoutOrder";
 import { StoreContext } from "../context/StoreContext";
 import {ReactComponent as EmptyCart} from './emptycart.svg';
+import FormValidation from "../util/utilidades";
 import { NavLink } from "react-router-dom";
 import "./container.scss"
 
 
+
+
 function ItemsCheckoutContainer () {
-    const [loading, setLoading] = useState(false);
-    const {cart, cartQty, totalPrice, emptyCart, createOrder, orderId} = useContext(StoreContext)
+    
+    const {cart, cartQty, totalPrice, emptyCart, createOrder, orderId, form, loading, setLoading} = useContext(StoreContext)
 
     return (
 
@@ -27,7 +30,7 @@ function ItemsCheckoutContainer () {
                     <div>
                         <h2> Carrito Vacio </h2> 
                         <EmptyCart/>
-                        <button as={NavLink} to={"/"} className="bttn">Empeza tu compra</button>
+                        <NavLink exact to={"/"}> <button className="bttn" type="submit">Empeza tu Compra</button> </NavLink>
                     </div>                   
                 
                 </div> :
@@ -63,10 +66,15 @@ function ItemsCheckoutContainer () {
                         if (orderId) {
                             setLoading(false);
 
-                        } else {
+                        } else if (FormValidation(form)) {
                             setLoading(true);
                             createOrder();
                             emptyCart();
+
+                        } else {
+
+                            alert("Completa el formulario correctamente con datos reales");
+
 
                         }
                         

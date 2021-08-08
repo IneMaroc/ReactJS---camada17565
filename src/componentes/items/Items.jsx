@@ -20,7 +20,7 @@ function Items ({item}) {
                 
                 <p className="cards-text">stock: {item.stock} </p>
                 <h6 className="cards-title">1 KG ${item.price}</h6>
-                <h5 className="card-title"><stong>{item.title}</stong></h5>
+                <h5 className="card-title"><strong>{item.title}</strong></h5>
                 <p className="cards-desc">{item.description}</p>
                 
                 

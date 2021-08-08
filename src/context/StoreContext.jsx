@@ -11,15 +11,12 @@ export const StoreComponentContext = ({children}) => {
     const [cart, setCart] = useState([]);
     const [cartQty, setCartQty] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
-    const [form, setForm] = useState({name:"", lastname:"", idnr:"", email:"", emailcheck:"", tel:0});
+    const [form, setForm] = useState({name:"", lastname:"", idnr:0, email:"", emailcheck:"", tel:0});
     const [orderId, setOrderId] = useState();
     const [order, setOrder] = useState({});
+    const [loading, setLoading] = useState(false);
     
-    const emptyCart = () => {
-        setCart([]);
-        setCartQty(0);
-        setTotalPrice(0);
-    }
+    
 
     const isInCart = (id) => {
         if (cart.find((p) => p.id === id)) {
@@ -105,8 +102,13 @@ export const StoreComponentContext = ({children}) => {
                      
     };
 
-    
+    const emptyCart = () => {
+        setCart([]);
+        setCartQty(0);
+        setTotalPrice(0);
+    }
 
+    
     const createOrder = () => {
 
 
@@ -130,7 +132,7 @@ export const StoreComponentContext = ({children}) => {
         orders.add(newOrder).then(({ id }) => {
             
             setOrderId(id);
-            
+
             const batch = db.batch();
 
             const updateItems = db.collection("products");
@@ -141,6 +143,8 @@ export const StoreComponentContext = ({children}) => {
 
             batch.commit()
             
+            
+            
         }).catch((err) => {
             console.error('Error: ', err)
         });
@@ -148,11 +152,36 @@ export const StoreComponentContext = ({children}) => {
 
     }
 
+    const deleteOrder = (id) => {
+
+        const db = getFireStore();
+        const batch = db.batch();
+
+        const orders = db.collection("orders").doc(id);
+        const updateItems = db.collection("products");
+
+        orders.delete().then(() => {
+            console.log("Document successfully deleted!");
+            listItems.forEach((element) => {
+                batch.update(updateItems.doc(element.id), { stock: element.stock });
+            }
+            )
+
+            batch.commit()
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
+
+        
+        
+
+    }
     
 
     const emptyOrder = () => {
         setOrder({});
         setOrderId();
+        setLoading(false);
     }
 
         
@@ -188,6 +217,7 @@ export const StoreComponentContext = ({children}) => {
     cartQty, setCartQty, 
     totalPrice, setTotalPrice, 
     form, setForm,
+    loading, setLoading,
     order, orderId, 
     onAdd, 
     updateCart, 
@@ -197,5 +227,5 @@ export const StoreComponentContext = ({children}) => {
     getItems, 
     emptyCart, 
     createOrder, 
-    emptyOrder }}>{children}</StoreContext.Provider>
+    emptyOrder, deleteOrder }}>{children}</StoreContext.Provider>
 };

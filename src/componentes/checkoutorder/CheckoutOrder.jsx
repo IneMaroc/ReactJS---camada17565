@@ -5,23 +5,60 @@ import "./checkoutorder.scss"
 
 function CheckoutOrder () {
 
-    const {emptyOrder, orderId} = useContext(StoreContext);
+    const {emptyOrder, orderId, order, deleteOrder} = useContext(StoreContext);
 
     return (
 
         
 
         <div className="checkoutorder">
-    
+
             <p> tu orden es <strong>{orderId}</strong> por favor <strong>NO LA PIERDAS!</strong></p>
 
-            
+            <table>
+                <thead>
+                    <tr>
+                        <th> Producto </th>
+                        <th> Cantidad </th>
+                        <th> Precio </th>
+                        <th> Subtotal </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        order.items.map(
+                            (item) => {
+                                return (
+                                    <tr key={item.id}>
+                                        <td> {item.name} </td>
+                                        <td> {item.qty}</td>
+                                        <td> $ {item.price} </td>
+                                        <td> $ {item.price * item.qty}</td>
+                                    </tr>
+                                );
+                            }
+                        )
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colSpan="4">
+                            Precio total $ {order.tPrice}
+                        </th>
+                    </tr>
+                </tfoot>
+
+            </table>             
+
 
             <div>
                 <button className="bttn" onClick={() => {
                 
                 
-                    //changeOrder();               
+                    deleteOrder(orderId);
+                    emptyOrder();
+
                 
                 }}> eliminar</button>
 
@@ -29,7 +66,7 @@ function CheckoutOrder () {
                  
                     emptyOrder();                
                 
-                }}> finalizar </button>
+                }}> Confirmar </button>
 
             </div>
             

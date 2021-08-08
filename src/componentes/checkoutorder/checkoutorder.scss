@@ -15,3 +15,48 @@
     box-shadow: 5px 5px 15px rgba($green, .5);
 
 }
+
+table {
+    table-layout: fixed;
+    width: 80%;
+    border-collapse: collapse;
+    
+    font-size: 0.7em;
+    color: $dark;
+    margin-bottom: 1em;
+    thead th:nth-child(1) {
+        width: auto;
+        
+    }
+    thead th:nth-child(2) {
+        width: auto;
+    }
+    thead th:nth-child(3) {
+        width: auto;
+    }
+    thead th:nth-child(4) {
+        width: auto;
+     }
+    th, td {
+        padding: auto;
+        border-bottom: 1px solid $green;
+    }
+    tfoot {
+        text-align: center;
+    }
+    thead th {
+        padding-right: 0.2em;
+    }
+    
+      
+
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
